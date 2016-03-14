@@ -51,6 +51,9 @@ class UserAuthenticator implements EventSubscriberInterface
      */
     public function onRequest(GetResponseEvent $event)
     {
+        /* $request = $event->getRequest(); $event это объект класса  GetResponseEvent
+        можно ли после $request = $event->getRequest();
+        сказать что $request это объект класса GetResponseEvent */
         $request = $event->getRequest();
         $route = $request->attributes->get('_route');
         if ($this->isExcludedRoute($route)) {
